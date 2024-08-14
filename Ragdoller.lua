@@ -94,3 +94,67 @@ function OnDeath(Character)
 			nsc.Parent = svch
 		end
 		local Limb = Character:FindFirstChild("Right Arm")
+		if Limb then
+
+			Limb.CFrame = Torso.CFrame * CFrame.new(1.5, 0, 0)
+			local Joint = Instance.new("Glue")
+			Joint.Name = "RightShoulder"
+			Joint.Part0 = Torso
+			Joint.Part1 = Limb
+			Joint.C0 = CFrame.new(1.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.C1 = CFrame.new(-0, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.Parent = Torso
+
+			local B = Instance.new("Part")
+			B.TopSurface = 0
+			B.BottomSurface = 0
+			B.formFactor = "Symmetric"
+			B.Size = Vector3.new(1, 1, 1)
+			B.Transparency = 1
+			B.CFrame = Limb.CFrame * CFrame.new(0, -0.5, 0)
+			B.Parent = Character
+			local W = Instance.new("Weld")
+			W.Part0 = Limb
+			W.Part1 = B
+			W.C0 = CFrame.new(0, -0.5, 0)
+			W.Parent = Limb
+
+		end
+		local Limb = Character:FindFirstChild("Left Arm")
+		if Limb then
+
+			Limb.CFrame = Torso.CFrame * CFrame.new(-1.5, 0, 0)
+			local Joint = Instance.new("Glue")
+			Joint.Name = "LeftShoulder"
+			Joint.Part0 = Torso
+			Joint.Part1 = Limb
+			Joint.C0 = CFrame.new(-1.5, 0.5, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			Joint.C1 = CFrame.new(0, 0.5, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			Joint.Parent = Torso
+
+			local B = Instance.new("Part")
+			B.TopSurface = 0
+			B.BottomSurface = 0
+			B.formFactor = "Symmetric"
+			B.Size = Vector3.new(1, 1, 1)
+			B.Transparency = 1
+			B.CFrame = Limb.CFrame * CFrame.new(0, -0.5, 0)
+			B.Parent = Character
+			local W = Instance.new("Weld")
+			W.Part0 = Limb
+			W.Part1 = B
+			W.C0 = CFrame.new(0, -0.5, 0)
+			W.Parent = Limb
+
+		end
+		local Limb = Character:FindFirstChild("Right Leg")
+		if Limb then
+
+			Limb.CFrame = Torso.CFrame * CFrame.new(0.5, -2, 0)
+			local Joint = Instance.new("Glue")
+			Joint.Name = "RightHip"
+			Joint.Part0 = Torso
+			Joint.Part1 = Limb
+			Joint.C0 = CFrame.new(0.5, -1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.C1 = CFrame.new(0, 1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.Parent = Torso
