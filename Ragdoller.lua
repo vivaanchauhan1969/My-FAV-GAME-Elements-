@@ -216,3 +216,17 @@ function OnDeath(Character)
 		Weld.C0 = CFrame.new(0, 0.5, 0)
 		Weld.Parent = Torso
 		]]
+	end
+	Character.Parent = Gibs
+	game.Debris:AddItem(Character, 12)
+	if movevector ~= Vector3.new() then
+		for i = 1,10 do
+			wait()
+			Torso.Velocity = movevector * 30
+		end
+	end
+end
+
+script.Parent.Humanoid.Died:connect(function()
+			OnDeath(script.Parent)
+		end)
